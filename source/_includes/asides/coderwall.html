@@ -1,0 +1,17 @@
+{% if site.github_user %}
+<section>
+  <h1>Coderwall</h1>
+  <p>
+  <script type="text/javascript">
+    function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        for ( var i = 0; i < badges.length; i++ ) {
+            document.write('<img src="'+ badges[i]["badge"] + '" width="48" height="48" />');
+        }
+    }
+  </script>
+  <script src="http://coderwall.com/mizzy.json?callback=display_coderwall"></script>
+  </p>
+  <p style="text-align: right;"><a href="http://coderwall.com/{{site.github_user}}">Powered by coderwall.com</a></p>
+</section>
+{% endif %}
