@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Adcloud Dev]]></title>
-  <link href="http://adcloud.github.com/atom.xml" rel="self"/>
-  <link href="http://adcloud.github.com/"/>
-  <updated>2012-03-30T00:41:37+02:00</updated>
-  <id>http://adcloud.github.com/</id>
+  <link href="http://dev.adcloud.com/atom.xml" rel="self"/>
+  <link href="http://dev.adcloud.com/"/>
+  <updated>2012-04-02T11:12:56+02:00</updated>
+  <id>http://dev.adcloud.com/</id>
   <author>
     <name><![CDATA[Dev Team]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Announcing Adcloud TechTalks]]></title>
-    <link href="http://adcloud.github.com/blog/2012/03/29/title/"/>
+    <link href="http://dev.adcloud.com/blog/2012/03/29/title/"/>
     <updated>2012-03-29T00:00:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2012/03/29/title</id>
+    <id>http://dev.adcloud.com/blog/2012/03/29/title</id>
     <content type="html"><![CDATA[<p>We are happy announce a new (hopefully) regular event: Adcloud TechTalks. These are informal meetings around technical challenges which we face, topics which we need to more about or things which we just find interresting. Speakers will range from internal developers, over local friends to invited industry experts.</p>
 
 <p>Our goal is to learn new things and foster the software development culture in Cologne.</p>
