@@ -96,4 +96,8 @@ disqus_show_comment_count: false
 google_analytics_tracking_id:
 
 # Facebook Like
-facebook_like: false
+facebook_like: true
+
+# Coderwall
+coderwall_id: 4f3aeb12d0f37b000a000007
+
