@@ -8,3 +8,9 @@ Thumbs.db
 
 .rbenv-version
 .rvmrc
+
+.sass-cache
+.pygments-cache
+_deploy
+public
+source/_stash
