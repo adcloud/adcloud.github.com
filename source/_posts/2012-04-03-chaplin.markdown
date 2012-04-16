@@ -1,0 +1,27 @@
+---
+layout: post
+title: "TechTalk #1 - Chaplin – an Application Architecture based on Backbone.js"
+description: "Adcloud TechTalk - Chaplin – an Application Architecture based on Backbone.js"
+category: 
+tags: [techtalks]
+author: Matthias Lübken
+---
+
+We are happy to announce our first public Adcloud TechTalk: 
+
+
+Chaplin – JavaScript Application Architecture with Backbone.js
+---
+
+Backbone.js is a small JavaScript library which helps building JavaScript-driven web applications. It’s widely used by companies like LinkedIn, Groupon, Foursquare and 37Signals. While Backbone.js is a good starting point, it is quite limited and does not provide a top-level architecture for scalable Web applications.
+
+[Mathias Schäfer](http://molily.de/) of [9elements](http://9elements.com) will introduce [Chaplin](https://github.com/moviepilot/chaplin), a field-tested application architecture on top of Backbone.js. Chaplin establishes conventions on how to structure an application and addresses the requirements of growing JavaScript applications. Like Backbone.js itself, Chaplin is free and open-source.
+
+
+The event will be on Wednesday, 25th April in our office: [Venloer Str. 25-27, Cologne](http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=Adcloud+GmbH,+K%C3%B6ln&aq=t&sll=51.151786,10.415039&sspn=18.676297,42.407227&ie=UTF8&hq=Adcloud+GmbH,&hnear=K%C3%B6ln,+Nordrhein-Westfalen&t=h&ll=50.941826,6.936321&spn=0.03656,0.082827&z=14&layer=c&cbll=50.941682,6.936591&panoid=V7fZsdjW52tul8e5aBKh6g&cbp=12,288.94,,0,-8.03). Doors open at 17:00. Talk starts 17:30. Event ends around 19:00. 
+
+Although the event is free we ask you to register since space is limitted:
+
+<a class="guestlist-event-98193" href="#"><img width="250" height="60" style="border: 0" src="http://guestlistapp.com/images/embed/register.png" alt="Register for Event" /></a>
+
+Looking forward to this and hopefully more events like this.
