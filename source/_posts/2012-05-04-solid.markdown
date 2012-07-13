@@ -1,0 +1,21 @@
+---
+layout: post
+title: "TechTalk #2 - Why the SOLID principles matter - even for JavaScript"
+description: "Adcloud TechTalk #2 - Why the SOLID principles matter - even for JavaScript"
+category: 
+tags: [techtalks]
+author: Matthias Lübken
+---
+
+After our successful start with our [first Adcloud TechTalk](http://img.ly/hoLs) we are proud to announce our second talk: Why the SOLID principles matter - even for JavaScript.
+
+Even though the famous [SOLID](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) design principles where invented in the context of more classical object-oriented languages like C++ and Java, the fundamental principles are enormously useful way beyond the concrete programming environment and by far not restricted to a concrete programming language. And having a well-structured code base is one of the most important factors to keep software flexible and changeable over time.
+
+Martin Lippert (co-founder of it-agile GmbH and now working at VMware on developer tooling for JavaScript, Spring, and Cloud Foundry, tweets [@martinlippert](https://twitter.com/#!/martinlippert)) will give an overview of the SOLID principles, explain why they are so important, talk about what happens if you ignore them, and dive into some examples for JavaScript.
+
+The event will be on Tuesday, 22nd May in our office: [Venloer Str. 25-27, Cologne](http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=Adcloud+GmbH,+K%C3%B6ln&aq=t&sll=51.151786,10.415039&sspn=18.676297,42.407227&ie=UTF8&hq=Adcloud+GmbH,&hnear=K%C3%B6ln,+Nordrhein-Westfalen&t=h&ll=50.941826,6.936321&spn=0.03656,0.082827&z=14&layer=c&cbll=50.941682,6.936591&panoid=V7fZsdjW52tul8e5aBKh6g&cbp=12,288.94,,0,-8.03). Doors open at 17:00. Talk starts 17:30. Event ends around 19:00. 
+
+Although the event is free we ask you to register since space is limitted:
+
+<a class="guestlist-event-103512" href="#"><img width="250" height="60" style="border: 0" src="http://guestlistapp.com/images/embed/register.png" alt="Register for Event" /></a>
+
