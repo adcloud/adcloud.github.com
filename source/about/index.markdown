@@ -13,7 +13,7 @@ Here are some links you may find interessting:
 
 [![](/images/octocat.jpg)](https://github.com/adcloud/) our public [Github](https://github.com/adcloud) page.
 
-[![](/images/juggling.png "")](/about/work_at_adcloud.html) our basic [principles](about/work_at_adcloud.html).
+[![](/images/juggling.png "")](/about/work_at_adcloud.html) our basic [principles](/about/work_at_adcloud.html).
 
 [![](/images/coderwall2.png "")](https://coderwall.com/team/adcloud-gmbh) our teams [coderwall](https://coderwall.com/team/adcloud-gmbh).
 
