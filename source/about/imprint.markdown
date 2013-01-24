@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Imprint"
-date: 2013-01-12 18:09
 comments: false
 sharing: true
 footer: true

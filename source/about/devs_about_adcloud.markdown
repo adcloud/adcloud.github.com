@@ -1,13 +1,10 @@
 ---
 layout: page
 title: "Developers about Adcloud"
-date: 2013-01-14 18:09
 comments: false
 sharing: true
 footer: true
 ---
-
-Developers about Adcloud
 
 
 {% img left /images/frank-muenchmeyer.jpg %} Wir suchen immer das richtige Tool für einen Job. Dadurch können wir viele neue Technologien testen. Manchmal ist es zwar eine Herausforderung aber sobald die ersten Hürden überwunden sind macht es Spaß.

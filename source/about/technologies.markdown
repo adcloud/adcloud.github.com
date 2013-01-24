@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Technologies"
-date: 2013-01-14 18:09
 comments: false
 sharing: true
 footer: true
