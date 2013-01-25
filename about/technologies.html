@@ -9,8 +9,12 @@
   <meta name="author" content="Dev Team">
 
   
-  <meta name="description" content="Technologies 1
-technologies.concat(methodologies).shuffle().pick(10) = [&#39;nodejs&#39;, &#39;devops&#39;, &#39;riak&#39;, &#39;ubuntu&#39;, &#39; &hellip;">
+  <meta name="description" content="Technologies var fill = d3.scale.category20(); d3.layout.cloud().size([600, 600]) .words([ "MySQL",
+"Redis",
+"Riak",
+"CouchDB",
+"Hadoop",
+"Memcached &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,14 +75,77 @@ technologies.concat(methodologies).shuffle().pick(10) = [&#39;nodejs&#39;, &#39;
     
   </header>
   
-  
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">technologies</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">methodologies</span><span class="p">).</span><span class="nx">shuffle</span><span class="p">().</span><span class="nx">pick</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nodejs&#39;</span><span class="p">,</span> <span class="s1">&#39;devops&#39;</span><span class="p">,</span> <span class="s1">&#39;riak&#39;</span><span class="p">,</span> <span class="s1">&#39;ubuntu&#39;</span><span class="p">,</span> <span class="s1">&#39;rails&#39;</span><span class="p">,</span> <span class="s1">&#39;redis&#39;</span><span class="p">,</span> <span class="s1">&#39;chef&#39;</span><span class="p">,</span> <span class="s1">&#39;aws&#39;</span><span class="p">,</span> <span class="s1">&#39;coffeescript&#39;</span><span class="p">,</span> <span class="s1">&#39;scrum&#39;</span> <span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
+  <script src="/javascripts/libs/d3.js"></script>
 
 
-<p>TODO: elaborate</p>
+<script src="/javascripts/libs/d3.layout.cloud.js"></script>
+
+
+<p><svg></svg></p>
+
+<script>
+  var fill = d3.scale.category20();
+
+  d3.layout.cloud().size([600, 600])
+      .words([
+        "MySQL",
+"Redis",
+"Riak",
+"CouchDB",
+"Hadoop",
+"Memcached",
+"MongoDB",
+"S3",
+"PHP",
+"Ruby",
+"JavaScript",
+"Python",
+"Clojure",
+"Django",
+"Ruby on Rails",
+"node.js",
+"Backbone",
+"symfony",
+"CakePHP",
+"Chef",
+"AWS",
+"EC2",
+"DynamoDB",
+"RabbitMQ",
+"Github:E",
+"Statsd",
+"Graphite",
+"Icinga",
+"Munin"
+].map(function(d) {
+        return {text: d, size: 10 + Math.random() * 90};
+      }))
+      .rotate(function() { return ~~(Math.random() * 2) * 90; })
+      .font("Impact")
+      .fontSize(function(d) { return d.size; })
+      .on("end", draw)
+      .start();
+
+  function draw(words) {
+    d3.select("svg")
+        .attr("width", 600)
+        .attr("height", 600)
+      .append("g")
+        .attr("transform", "translate(300,300)")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size + "px"; })
+        .style("font-family", "Impact")
+        .style("fill", function(d, i) { return fill(i); })
+        .attr("text-anchor", "middle")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+  }
+</script>
+
 
   
     <footer>
