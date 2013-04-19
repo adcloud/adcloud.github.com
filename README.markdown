@@ -3,6 +3,12 @@
 [Blogging Basics](http://octopress.org/docs/blogging/)  
 [Deploying](http://octopress.org/docs/deploying/github/) - With Github User/Organization pages
 
+You can run a preview on localhost:4000 via:
+
+```
+bundle exec rake preview
+```
+
 
 Note:  
 In order for the deployment to work you need to have the master branch checked out under `_deploy`.
