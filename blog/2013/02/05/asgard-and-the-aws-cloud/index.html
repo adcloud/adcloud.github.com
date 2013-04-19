@@ -5,16 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Technologies - adcloud dev</title>
+  <title>TechTalk #5 - Asgard and the AWS cloud - adcloud dev</title>
   <meta name="author" content="Dev Team">
 
   
-  <meta name="description" content="Technologies var fill = d3.scale.category20(); d3.layout.cloud().size([600, 600]) .words([ "MySQL",
-"Redis",
-"Riak",
-"CouchDB",
-"Hadoop",
-"Memcached &hellip;">
+  <meta name="description" content="TechTalk #5 - Asgard and the AWS cloud">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dev.adcloud.com/about/technologies.html">
+  <link rel="canonical" href="http://dev.adcloud.com/blog/2013/02/05/asgard-and-the-aws-cloud">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -68,92 +63,89 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Technologies</h1>
+    
+      <h1 class="entry-title">TechTalk #5 - Asgard and the AWS Cloud</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-05T15:22:00+01:00" pubdate data-updated="true">Feb 5<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <script src="/javascripts/libs/d3.js"></script>
 
 
-<script src="/javascripts/libs/d3.layout.cloud.js"></script>
+<div class="entry-content"><p>TechTalk #5 - Asgard and the AWS cloud</p>
+
+<p>We are happy to announce our first Adcloud TechTalk in 2013:</p>
+
+<p>Asgard and the AWS cloud</p>
+
+<p>Manually managing infrastructure with a lot of components and servers is very error-prone.
+Especially in dynamic environments like in the &#8220;cloud&#8221; it often leads to maintenance problems that require lots of time.
+A solution could be the introduction of change management applications like puppet, chef, etc. but this of course needs sophisticated knowledge and experience and also adds another level of complexity to the exisiting infrastructure.
+<a href="https://signup.netflix.com">NetFlix</a>, one of the biggest players in the big-data business, hosts its complete infrastructure in the AWS cloud and needs to maintain it automatically.
+Therefore they developed a tool called <a href="https://github.com/Netflix/asgard">&#8216;Asgard&#8217;</a> which provides the lacking interface to already existing functionality of the AWS cloud thus enabling user-friendly management of cloud infrastructure</p>
+
+<p>In this talk, Johannes Hörle and Roland Gude from <a href="http://www.yoochoose.com">Yoochoose</a> will give a short overview of Asgard&#8217;s functionality and how they use it to administer their cloud environment.</p>
+
+<p>&#8220;Don&#8217;t ask what you can do for the cloud, ask what the cloud can do for you!&#8221;</p>
+
+<p>Johannes holds a Master&#8217;s Degree in Computer Science from the University of Applied Sciences Bonn-Rhein-Sieg. He now works as Lead Engineer at Yoochoose and coordinates the development of the SaaS Recommender System in the AWS Cloud. In his free time he likes playing football and riding his road bike.</p>
+
+<p>Roland holds a Master’s Degree in Computer Science from the University of Applied Science Bonn-Rhein Sieg. After working as a research fellow at the German Aerospace Center Institute for Simulation and Software technology he joined Yoochoose as an Engineer, where he is mainly concerned with scalability of the Yoochoose software stack. In the meantime he takes care for his 2 year old daughter. Apart from that he enjoys playing football, reading and going to the theater.</p>
+
+<p>The event will be held on Wednesday, February 27th in our office: <a href="http://maps.google.de/maps?f=q&amp;source=s_q&amp;hl=de&amp;geocode=&amp;q=Adcloud+GmbH,+Köln&amp;aq=t&amp;sll=51.151786,10.415039&amp;sspn=18.676297,42.407227&amp;ie=UTF8&amp;hq=Adcloud+GmbH,&amp;hnear=Köln,+Nordrhein-Westfalen&amp;t=h&amp;ll=50.941826,6.936321&amp;spn=0.03656,0.082827&amp;z=14&amp;layer=c&amp;cbll=50.941682,6.936591&amp;panoid=V7fZsdjW52tul8e5aBKh6g&amp;cbp=12,288.94,,0,-8.03">Venloer Str. 25-27, Cologne</a>. Doors open at 17:30. Talk starts 18:00. Event ends around 19:30.</p>
+
+<p>Although the event is free we ask you to register since space is limitted:</p>
+
+<p><a class="guestlist-event-147090" href="#"><img width="250" height="60" style="border: 0" src="https://guestlistapp.com/images/embed/register.png" alt="Register for Event" /></a></p>
+</div>
 
 
-<p><svg></svg></p>
-
-<script>
-  var fill = d3.scale.category20();
-
-  d3.layout.cloud().size([600, 600])
-      .words([
-        "MySQL",
-"Redis",
-"Riak",
-"CouchDB",
-"Hadoop",
-"Memcached",
-"MongoDB",
-"S3",
-"PHP",
-"Ruby",
-"JavaScript",
-"Python",
-"Clojure",
-"Django",
-"Ruby on Rails",
-"node.js",
-"Backbone",
-"symfony",
-"CakePHP",
-"Chef",
-"AWS",
-"EC2",
-"DynamoDB",
-"RabbitMQ",
-"Github:E",
-"Statsd",
-"Graphite",
-"Icinga",
-"Munin"
-].map(function(d) {
-        return {text: d, size: 10 + Math.random() * 90};
-      }))
-      .rotate(function() { return ~~(Math.random() * 2) * 90; })
-      .font("Impact")
-      .fontSize(function(d) { return d.size; })
-      .on("end", draw)
-      .start();
-
-  function draw(words) {
-    d3.select("svg")
-        .attr("width", 600)
-        .attr("height", 600)
-      .append("g")
-        .attr("transform", "translate(300,300)")
-      .selectAll("text")
-        .data(words)
-      .enter().append("text")
-        .style("font-size", function(d) { return d.size + "px"; })
-        .style("font-family", "Impact")
-        .style("fill", function(d, i) { return fill(i); })
-        .attr("text-anchor", "middle")
-        .attr("transform", function(d) {
-          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-        })
-        .text(function(d) { return d.text; });
-  }
-</script>
-
-
-  
-    <footer>
+  <footer>
+    <p class="meta">
       
-      
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dev.adcloud.com/about/technologies.html" data-via="adcloud" data-counturl="http://dev.adcloud.com/about/technologies.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Matthias Lübken</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-05T15:22:00+01:00" pubdate data-updated="true">Feb 5<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dev.adcloud.com/blog/2013/02/05/asgard-and-the-aws-cloud/" data-via="adcloud" data-counturl="http://dev.adcloud.com/blog/2013/02/05/asgard-and-the-aws-cloud/" >Tweet</a>
   
   
   
@@ -161,9 +153,16 @@
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2012/11/29/techtalk-number-4-the-sound-of-adcloud/" title="Previous Post: TechTalk #4 - The Sound of Adcloud">&laquo; TechTalk #4 - The Sound of Adcloud</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/04/19/clojure-introduction-workshop/" title="Next Post: clojure introduction workshop">clojure introduction workshop &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
