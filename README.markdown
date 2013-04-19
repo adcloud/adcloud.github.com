@@ -1,3 +1,18 @@
+## quick start links
+
+[Blogging Basics](http://octopress.org/docs/blogging/)  
+[Deploying](http://octopress.org/docs/deploying/github/) - With Github User/Organization pages
+
+
+Note:  
+In order for the deployment to work you need to have the master branch checked out under `_deploy`.
+
+```
+rm -r _deploy
+git clone https://github.com/adcloud/adcloud.github.com _deploy
+```
+
+
 ## What is Octopress?
 
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
@@ -9,14 +24,10 @@ Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
 5. **Ships with great plug-ins** some original and others from the Jekyll community &mdash; tested and improved.
 
 
-## Documentation
+## Octopress Documentation
 
 Check out [Octopress.org](http://octopress.org/docs) for guides and documentation.
 
-
-## Contributing
-
-We love to see people contributing to Octopress, whether it's a bug report, feature suggestion or a pull request. At the moment, we try to keep the core slick and lean, focusing on basic blogging needs, so some of your suggestions might not find their way into Octopress. For those ideas, we started a [list of 3rd party plug-ins](https://github.com/imathis/octopress/wiki/3rd-party-plug-ins), where you can link your own Octopress plug-in repositories. For the future, we're thinking about ways to easier add them them into our main releases.
 
 
 ## License
