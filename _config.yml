@@ -4,7 +4,7 @@
 
 url: http://dev.adcloud.com
 title: adcloud dev
-subtitle:
+subtitle: 
 author: Dev Team
 simple_search: http://google.com/search
 description:
@@ -29,7 +29,7 @@ email:
 root: /
 permalink: /blog/:year/:month/:day/:title/
 source: source
-destination: _deploy
+destination: public
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories

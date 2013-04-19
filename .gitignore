@@ -1,3 +1,5 @@
+_site/*
+_theme_packages/*
 
 Thumbs.db
 .DS_Store
@@ -9,5 +11,6 @@ Thumbs.db
 
 .sass-cache
 .pygments-cache
+_deploy
 public
 source/_stash
