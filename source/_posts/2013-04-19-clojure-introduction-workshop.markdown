@@ -36,9 +36,9 @@ We will finish with a BBQ, where you can talk with other attendees or continue o
 
 Although the event is free we ask you to register since space is limitted:
 
-<a class="guestlist-event-161211" href="#"><img width="250" height="60" style="border: 0" src="https://guestlistapp.com/images/embed/register.png" alt="Register for Event" /></a>
-
 <!-- more -->
+
+<a class="guestlist-event-161211" href="#"><img width="250" height="60" style="border: 0" src="https://guestlistapp.com/images/embed/register.png" alt="Register for Event" /></a>
 
 ## What you will NOT learn
 
