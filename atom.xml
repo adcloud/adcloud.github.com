@@ -4,7 +4,7 @@
   <title><![CDATA[adcloud dev]]></title>
   <link href="http://dev.adcloud.com/atom.xml" rel="self"/>
   <link href="http://dev.adcloud.com/"/>
-  <updated>2013-05-06T15:14:57+02:00</updated>
+  <updated>2013-05-17T12:00:54+02:00</updated>
   <id>http://dev.adcloud.com/</id>
   <author>
     <name><![CDATA[Dev Team]]></name>
@@ -18,7 +18,9 @@
     <link href="http://dev.adcloud.com/blog/2013/04/19/clojure-introduction-workshop/"/>
     <updated>2013-04-19T12:04:00+02:00</updated>
     <id>http://dev.adcloud.com/blog/2013/04/19/clojure-introduction-workshop</id>
-    <content type="html"><![CDATA[<p><strong>When?</strong> Wednesday, 22.05.2013</p>
+    <content type="html"><![CDATA[<p><img class="right" src="http://dev.adcloud.com/images/sold_out.png"></p>
+
+<p><strong>When?</strong> Wednesday, 22.05.2013</p>
 
 <p><strong>Where?</strong><br/>
 <em>Adcloud GmbH</em><br/>
