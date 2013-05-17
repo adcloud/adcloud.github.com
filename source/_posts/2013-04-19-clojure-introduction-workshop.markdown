@@ -8,6 +8,8 @@ tags: [workshop, clojure]
 author: Waldemar Schwan
 ---
 
+{% img right /images/sold_out.png %}
+
 **When?** Wednesday, 22.05.2013
 
 **Where?**  
