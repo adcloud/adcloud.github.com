@@ -12,8 +12,10 @@ author: Lars Wolff
 
 ## ["Out Of Network"](http://en.wikipedia.org/wiki/Run_of_network)
 
-Adcloud will shutdown until the 1st January 2014,
-so we want to host the DevHouse Friday Chillout for the last time.
+Adcloud GmbH, acquired in 2011 by Deutsche Post as a startup
+company, will cease its operations by the end of 2013.
+
+We're proud to host the DevHouse Friday Chillout for the last time.
 
 Feel welcome and enjoy the DevHouse Friday with talks, food and
 Beer.js in our office and the rooftop.
