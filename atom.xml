@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[adcloud dev]]></title>
-  <link href="http://adcloud.github.com/atom.xml" rel="self"/>
-  <link href="http://adcloud.github.com/"/>
-  <updated>2013-10-09T17:16:46+02:00</updated>
-  <id>http://adcloud.github.com/</id>
+  <link href="http://dev.adcloud.com/atom.xml" rel="self"/>
+  <link href="http://dev.adcloud.com/"/>
+  <updated>2013-10-09T22:52:28+02:00</updated>
+  <id>http://dev.adcloud.com/</id>
   <author>
     <name><![CDATA[Dev Team]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[DevHouse Friday Chillout]]></title>
-    <link href="http://adcloud.github.com/blog/2013/10/08/devhouse-friday-chillout/"/>
+    <link href="http://dev.adcloud.com/blog/2013/10/08/devhouse-friday-chillout/"/>
     <updated>2013-10-08T14:40:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2013/10/08/devhouse-friday-chillout</id>
-    <content type="html"><![CDATA[<p><a href="http://devhousefriday.org/networks/events/show_event.82979"><img class="right" src="http://adcloud.github.com/images/devhouse.gif"></a></p>
+    <id>http://dev.adcloud.com/blog/2013/10/08/devhouse-friday-chillout</id>
+    <content type="html"><![CDATA[<p><a href="http://devhousefriday.org/networks/events/show_event.82979"><img class="right" src="http://dev.adcloud.com/images/devhouse.gif"></a></p>
 
 <h2><a href="http://en.wikipedia.org/wiki/Run_of_network">&#8220;Out Of Network&#8221;</a></h2>
 
@@ -60,10 +60,10 @@ Doors open at 19:00h</p>
   
   <entry>
     <title type="html"><![CDATA[clojure introduction workshop]]></title>
-    <link href="http://adcloud.github.com/blog/2013/04/19/clojure-introduction-workshop/"/>
+    <link href="http://dev.adcloud.com/blog/2013/04/19/clojure-introduction-workshop/"/>
     <updated>2013-04-19T12:04:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2013/04/19/clojure-introduction-workshop</id>
-    <content type="html"><![CDATA[<p><img class="right" src="http://adcloud.github.com/images/sold_out.png"></p>
+    <id>http://dev.adcloud.com/blog/2013/04/19/clojure-introduction-workshop</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://dev.adcloud.com/images/sold_out.png"></p>
 
 <p><strong>When?</strong> Wednesday, 22.05.2013</p>
 
@@ -159,9 +159,9 @@ Clojure is a dialect of <strong>Lisp</strong>, and shares with Lisp the code-as-
   
   <entry>
     <title type="html"><![CDATA[TechTalk #5 - Asgard and the AWS cloud]]></title>
-    <link href="http://adcloud.github.com/blog/2013/02/05/asgard-and-the-aws-cloud/"/>
+    <link href="http://dev.adcloud.com/blog/2013/02/05/asgard-and-the-aws-cloud/"/>
     <updated>2013-02-05T15:22:00+01:00</updated>
-    <id>http://adcloud.github.com/blog/2013/02/05/asgard-and-the-aws-cloud</id>
+    <id>http://dev.adcloud.com/blog/2013/02/05/asgard-and-the-aws-cloud</id>
     <content type="html"><![CDATA[<p>TechTalk #5 - Asgard and the AWS cloud</p>
 
 <p>We are happy to announce our first Adcloud TechTalk in 2013:</p>
@@ -192,9 +192,9 @@ Therefore they developed a tool called <a href="https://github.com/Netflix/asgar
   
   <entry>
     <title type="html"><![CDATA[TechTalk #4 - The Sound of Adcloud]]></title>
-    <link href="http://adcloud.github.com/blog/2012/11/29/techtalk-number-4-the-sound-of-adcloud/"/>
+    <link href="http://dev.adcloud.com/blog/2012/11/29/techtalk-number-4-the-sound-of-adcloud/"/>
     <updated>2012-11-29T16:00:00+01:00</updated>
-    <id>http://adcloud.github.com/blog/2012/11/29/techtalk-number-4-the-sound-of-adcloud</id>
+    <id>http://dev.adcloud.com/blog/2012/11/29/techtalk-number-4-the-sound-of-adcloud</id>
     <content type="html"><![CDATA[<p><em>Winter is coming</em> and so is our last Tech Talk of the year. This time it is all about music and processing real time events.</p>
 
 <h2>The Sound of Adcloud</h2>
@@ -220,9 +220,9 @@ for Event" /></a></p>
   
   <entry>
     <title type="html"><![CDATA[TechTalk #3 - Redis Internals]]></title>
-    <link href="http://adcloud.github.com/blog/2012/10/08/redis-techtalk/"/>
+    <link href="http://dev.adcloud.com/blog/2012/10/08/redis-techtalk/"/>
     <updated>2012-10-08T00:00:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2012/10/08/redis-techtalk</id>
+    <id>http://dev.adcloud.com/blog/2012/10/08/redis-techtalk</id>
     <content type="html"><![CDATA[<p>The summer is over. Our little break too. Lets continoue with our
 Adcloud Techtalks. This time with some with a slighlty deeper topic:</p>
 
@@ -257,9 +257,9 @@ for Event" /></a></p>
   
   <entry>
     <title type="html"><![CDATA[NoSQL: Not only a fairy tale]]></title>
-    <link href="http://adcloud.github.com/blog/2012/07/13/nosql-not-only-a-fairy-tale/"/>
+    <link href="http://dev.adcloud.com/blog/2012/07/13/nosql-not-only-a-fairy-tale/"/>
     <updated>2012-07-13T00:00:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2012/07/13/nosql-not-only-a-fairy-tale</id>
+    <id>http://dev.adcloud.com/blog/2012/07/13/nosql-not-only-a-fairy-tale</id>
     <content type="html"><![CDATA[<p><em>This is a cross-post from Sebastian Cohnens <a href="http://tisba.de/2012/06/28/nosql-not-only-a-fairy-tale/">personal blog</a>.</em></p>
 
 <p>At this year&#8217;s <a href="http://www.nosql-matters.org/">NoSQL Matters</a> conference in Cologne, which was also the first one of its kind, I held a talk together with <a href="https://twitter.com/teemow">Timo Derstappen</a> about the evolution of <a href="http://adcloud.com">adcloud</a>&#8217;s adserver. We took the audience on a journey spanning multiple years of changing requirements and the resulting architectural decisions made during that time. A focus was on NoSQL databases involved in the adserver, of course :)</p>
@@ -279,7 +279,7 @@ for Event" /></a></p>
 
 <p>We have two important data entities:</p>
 
-<p><img class="right" src="http://adcloud.github.com/images/posts/nosql-fairy-tale/website-placement.png"></p>
+<p><img class="right" src="http://dev.adcloud.com/images/posts/nosql-fairy-tale/website-placement.png"></p>
 
 <ul>
 <li><strong>placements</strong> are container on websites that can display ads to the user. A placement knows its size, style and the amount of ads that it holds.</li>
@@ -298,7 +298,7 @@ for Event" /></a></p>
 </ul>
 
 
-<p><img class="center" src="http://adcloud.github.com/images/posts/nosql-fairy-tale/system-context.png"></p>
+<p><img class="center" src="http://dev.adcloud.com/images/posts/nosql-fairy-tale/system-context.png"></p>
 
 <p>These systems are highly decoupled. The Platform <em>publishes</em> placement, ad and priority data to the adservers. The adserver reports statistical and tracking data back to the Platform for analysis.</p>
 
@@ -316,7 +316,7 @@ for Event" /></a></p>
 
 <h2>The relaxed Knight</h2>
 
-<p><img class="right" src="http://adcloud.github.com/images/posts/nosql-fairy-tale/couchdb-logo.png"></p>
+<p><img class="right" src="http://dev.adcloud.com/images/posts/nosql-fairy-tale/couchdb-logo.png"></p>
 
 <p>In 2009, we took a closer look at CouchDB. We were pretty excited about the idea of using HTTP/REST with JavaScript map/reduce. The multi-master replication setup looked exactly like what we were looking for, in terms of having a scalable system.</p>
 
@@ -354,7 +354,7 @@ for Event" /></a></p>
 
 <p>A quick test immediately showed that CouchDB was not able to provide the necessary throughput and latency we need to disable the caching in nginx. We also realized that caching things in node.js is pretty a bad idea &mdash; stop world garbage collection is a no-go for good and stable service quality in terms of latency.</p>
 
-<p><img class="right" src="http://adcloud.github.com/images/posts/nosql-fairy-tale/redis-logo.png"></p>
+<p><img class="right" src="http://dev.adcloud.com/images/posts/nosql-fairy-tale/redis-logo.png"></p>
 
 <p>The solution was rather simple from an architectural perspective. We simply replaced our caching backend implemented from objects in node.js to Redis. Some cache objects and structures for lookups were changed to fully utilize native data types Redis provides. The migration was rather simple.</p>
 
@@ -413,16 +413,16 @@ for Event" /></a></p>
 
 <h2>Slides</h2>
 
-<script async class="speakerdeck-embed" data-id="4fc63943c41f0f002101150c" data-ratio="1.3333333333333333" src="http://adcloud.github.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="4fc63943c41f0f002101150c" data-ratio="1.3333333333333333" src="http://dev.adcloud.com//speakerdeck.com/assets/embed.js"></script>
 
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[TechTalk #2 - Why the SOLID principles matter - even for JavaScript]]></title>
-    <link href="http://adcloud.github.com/blog/2012/05/04/solid/"/>
+    <link href="http://dev.adcloud.com/blog/2012/05/04/solid/"/>
     <updated>2012-05-04T00:00:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2012/05/04/solid</id>
+    <id>http://dev.adcloud.com/blog/2012/05/04/solid</id>
     <content type="html"><![CDATA[<p>After our successful start with our <a href="http://img.ly/hoLs">first Adcloud TechTalk</a> we are proud to announce our second talk: Why the SOLID principles matter - even for JavaScript.</p>
 
 <p>Even though the famous <a href="http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod">SOLID</a> design principles where invented in the context of more classical object-oriented languages like C++ and Java, the fundamental principles are enormously useful way beyond the concrete programming environment and by far not restricted to a concrete programming language. And having a well-structured code base is one of the most important factors to keep software flexible and changeable over time.</p>
@@ -439,9 +439,9 @@ for Event" /></a></p>
   
   <entry>
     <title type="html"><![CDATA[TechTalk #1 - Chaplin – an Application Architecture based on Backbone.js]]></title>
-    <link href="http://adcloud.github.com/blog/2012/04/16/chaplin/"/>
+    <link href="http://dev.adcloud.com/blog/2012/04/16/chaplin/"/>
     <updated>2012-04-16T00:00:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2012/04/16/chaplin</id>
+    <id>http://dev.adcloud.com/blog/2012/04/16/chaplin</id>
     <content type="html"><![CDATA[<p><strong>Update</strong>: We are out of space. Stay tuned for the next talk.</p>
 
 <p>We are happy to announce our first public Adcloud TechTalk:</p>
@@ -464,14 +464,14 @@ for Event" /></a></p>
   
   <entry>
     <title type="html"><![CDATA[Announcing "Adcloud TechTalks"]]></title>
-    <link href="http://adcloud.github.com/blog/2012/03/29/adcloud-techtalks/"/>
+    <link href="http://dev.adcloud.com/blog/2012/03/29/adcloud-techtalks/"/>
     <updated>2012-03-29T00:00:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2012/03/29/adcloud-techtalks</id>
+    <id>http://dev.adcloud.com/blog/2012/03/29/adcloud-techtalks</id>
     <content type="html"><![CDATA[<p>We are happy announce a new (hopefully) regular event: Adcloud TechTalks. These are informal meetings around technical challenges which we face, topics which we would like to know more about or things which we just find interesting. Speakers will range from internal developers and local friends to invited industry experts.</p>
 
 <p>Our goal is to learn new things and foster the software development culture in Cologne.</p>
 
-<p>These events will take place weekdays in the late afternoon. Doors open at 17:00. The talk starts at 17:30 and we calculate around 45 minutes for the talk and approx 45 minutes of discussion. Concrete dates will be announced a couple of weeks prior to the talk in this <a href="http://adcloud.github.com/atom.xml">blog</a> and via <a href="http://twitter.com/adcloud">@adcloud</a>.</p>
+<p>These events will take place weekdays in the late afternoon. Doors open at 17:00. The talk starts at 17:30 and we calculate around 45 minutes for the talk and approx 45 minutes of discussion. Concrete dates will be announced a couple of weeks prior to the talk in this <a href="http://dev.adcloud.com/atom.xml">blog</a> and via <a href="http://twitter.com/adcloud">@adcloud</a>.</p>
 
 <p>All events will be open to the public, although we will require some form of registration. Stay tuned for the first event.</p>
 ]]></content>

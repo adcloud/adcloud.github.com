@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: riak | adcloud dev]]></title>
-  <link href="http://adcloud.github.com/blog/categories/riak/atom.xml" rel="self"/>
-  <link href="http://adcloud.github.com/"/>
-  <updated>2013-10-09T17:16:46+02:00</updated>
-  <id>http://adcloud.github.com/</id>
+  <link href="http://dev.adcloud.com/blog/categories/riak/atom.xml" rel="self"/>
+  <link href="http://dev.adcloud.com/"/>
+  <updated>2013-10-09T22:52:28+02:00</updated>
+  <id>http://dev.adcloud.com/</id>
   <author>
     <name><![CDATA[Dev Team]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[NoSQL: Not only a fairy tale]]></title>
-    <link href="http://adcloud.github.com/blog/2012/07/13/nosql-not-only-a-fairy-tale/"/>
+    <link href="http://dev.adcloud.com/blog/2012/07/13/nosql-not-only-a-fairy-tale/"/>
     <updated>2012-07-13T00:00:00+02:00</updated>
-    <id>http://adcloud.github.com/blog/2012/07/13/nosql-not-only-a-fairy-tale</id>
+    <id>http://dev.adcloud.com/blog/2012/07/13/nosql-not-only-a-fairy-tale</id>
     <content type="html"><![CDATA[<p><em>This is a cross-post from Sebastian Cohnens <a href="http://tisba.de/2012/06/28/nosql-not-only-a-fairy-tale/">personal blog</a>.</em></p>
 
 <p>At this year's <a href="http://www.nosql-matters.org/">NoSQL Matters</a> conference in Cologne, which was also the first one of its kind, I held a talk together with <a href="https://twitter.com/teemow">Timo Derstappen</a> about the evolution of <a href="http://adcloud.com">adcloud</a>'s adserver. We took the audience on a journey spanning multiple years of changing requirements and the resulting architectural decisions made during that time. A focus was on NoSQL databases involved in the adserver, of course :)</p>
@@ -171,7 +171,7 @@
 
 <h2>Slides</h2>
 
-<script async class="speakerdeck-embed" data-id="4fc63943c41f0f002101150c" data-ratio="1.3333333333333333" src="http://adcloud.github.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="4fc63943c41f0f002101150c" data-ratio="1.3333333333333333" src="http://dev.adcloud.com//speakerdeck.com/assets/embed.js"></script>
 
 ]]></content>
   </entry>
