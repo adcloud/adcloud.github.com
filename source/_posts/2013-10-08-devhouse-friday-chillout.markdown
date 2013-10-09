@@ -12,7 +12,7 @@ author: Lars Wolff
 
 ## ["Out Of Network"](http://en.wikipedia.org/wiki/Run_of_network)
 
-Adcloud GmbH, acquired in 2011 by Deutsche Post as a startup
+Adcloud GmbH, acquired in 2011 by Deutsche Post DHL as a startup
 company, will cease its operations by the end of 2013.
 
 We're proud to host the DevHouse Friday Chillout for the last time.
