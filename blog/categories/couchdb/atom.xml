@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: couchdb | adcloud dev]]></title>
+  <link href="http://adcloud.github.com/blog/categories/couchdb/atom.xml" rel="self"/>
+  <link href="http://adcloud.github.com/"/>
+  <updated>2013-10-09T17:16:46+02:00</updated>
+  <id>http://adcloud.github.com/</id>
+  <author>
+    <name><![CDATA[Dev Team]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[NoSQL: Not only a fairy tale]]></title>
+    <link href="http://adcloud.github.com/blog/2012/07/13/nosql-not-only-a-fairy-tale/"/>
+    <updated>2012-07-13T00:00:00+02:00</updated>
+    <id>http://adcloud.github.com/blog/2012/07/13/nosql-not-only-a-fairy-tale</id>
+    <content type="html"><![CDATA[<p><em>This is a cross-post from Sebastian Cohnens <a href="http://tisba.de/2012/06/28/nosql-not-only-a-fairy-tale/">personal blog</a>.</em></p>
+
+<p>At this year's <a href="http://www.nosql-matters.org/">NoSQL Matters</a> conference in Cologne, which was also the first one of its kind, I held a talk together with <a href="https://twitter.com/teemow">Timo Derstappen</a> about the evolution of <a href="http://adcloud.com">adcloud</a>'s adserver. We took the audience on a journey spanning multiple years of changing requirements and the resulting architectural decisions made during that time. A focus was on NoSQL databases involved in the adserver, of course :)</p>
+
+<!--more-->
+
+
+<p>Before I start, I'd like to quickly thank the organizers of the NoSQL Matters conference. It was a very interesting meetup with awesome speakers, great catering and nice location.</p>
+
+<p>The reminder of this post is a transcript of the talk. Be warned, that this post is lengthy and quite detailed :) You'll also find the slides at the end or directly at <a href="https://speakerdeck.com/u/tisba/p/nosql-not-only-a-fairy-tale">speakerdeck</a>. The talk was also recorded but the video is not available yet.</p>
+
+<p><strong>Disclaimer</strong>: I'm not an employee of adcloud, I just work for them. If I say <em>we</em> in this article, I am referring to Timo and me or the adcloud dev team (depending on the context).</p>
+
+<h2>Preface</h2>
+
+<p>Before we can dive right into our story we are about to tell you, we first have to explain some terms related to the stuff we are doing at adcloud. At adcloud we are doing <a href="http://en.wikipedia.org/wiki/Performance-based_advertising">performance advertising</a>. To simplify things for this talk: We are serving ads.</p>
+
+<p>We have two important data entities:</p>
+
+<p><img class="right" src="/images/posts/nosql-fairy-tale/website-placement.png"></p>
+
+<ul>
+<li><strong>placements</strong> are container on websites that can display ads to the user. A placement knows its size, style and the amount of ads that it holds.</li>
+<li>one, two or more <strong>ads</strong> can be displayed within a placement. An ad consists of some text, an image and a link.</li>
+<li>there is an n:m relationship between placements and ads, describing which ads can run on what placements. An attribute of this relationship is what we call <strong>ad priority</strong> or just priority. The priority specifies how likely it is for an ad to be displayed on a given placement.</li>
+</ul>
+
+
+<p><strong>Placements</strong> and <strong>ads</strong> are rather static data, whereas the <strong>priority</strong> changes all the time in order to optimize the performance.</p>
+
+<p>To follow this talk you need to know that there are two distinct systems at adcloud (there are more actually, but they can be ignored for now): <strong>Platform</strong> and <strong>adserver</strong>.</p>
+
+<ul>
+<li>The <strong>Platform</strong> is a typical web application working primarily as the administrative back office. It is the place where all the business related data is managed, reports are generated, etc. Beside the traditional web stack, there are also tons of background workers to process and analyse data. There is only very little NoSQL here.</li>
+<li>The <strong>adserver</strong> on the other hand is a dedicated and decoupled system, which serves ads and collects tracking data from the users (like clicks on ads). NoSQL databases are heavily used within the adserver.</li>
+</ul>
+
+
+<p><img class="center" src="/images/posts/nosql-fairy-tale/system-context.png"></p>
+
+<p>These systems are highly decoupled. The Platform <em>publishes</em> placement, ad and priority data to the adservers. The adserver reports statistical and tracking data back to the Platform for analysis.</p>
+
+<p>Since only the adserver heavily uses NoSQL systems, we will focus on it in this talk.</p>
+
+<h2>AWS S3: Simple Storage Service</h2>
+
+<p>The first version of the "adserver" wasn't actually a server at all. We simply used S3. We combined all placement and ad data, including priorities, together in one document, added some JavaScript and pushed everything to S3. This was the initial version of the publishing process.</p>
+
+<p>When a user visited a website, we delivered the JavaScript with the embedded data via a <a href="http://www.akamai.com/cotendo">CDN</a> (fed by S3) and executed it on the client side. The JavaScript contained some logic to choose from the available ads, based on the ads' priorities; and in the end, it rendered the ads.</p>
+
+<p>The problem with this simple approach was that, due to the heavy denormalization, the publishing process was rather expensive. As we already mentioned, placements and ads don't change, but priorities change all the time. With our denormalized approach, we couldn't update our data incrementally.</p>
+
+<p>Eventually, the time required to fully publish everything was taking too long, and we need to publish the calculated priorities as quickly as possible to maximize the yield.</p>
+
+<h2>The relaxed Knight</h2>
+
+<p><img class="right" src="/images/posts/nosql-fairy-tale/couchdb-logo.png"></p>
+
+<p>In 2009, we took a closer look at CouchDB. We were pretty excited about the idea of using HTTP/REST with JavaScript map/reduce. The multi-master replication setup looked exactly like what we were looking for, in terms of having a scalable system.</p>
+
+<p>The first design idea was to just replace S3 with CouchDB. We thought about normalizing the data (split by update frequency) to enable incremental updates, to speed up the publishing process. But in the end we realized that modeling n:m relationships with CouchDB's MapReduce is a hard problem to solve. Another issue was that CouchDB's views are incremental and persisted &mdash; which is quite useless if you are constantly changing the data underneath.</p>
+
+<p>In the end, we added a application server written in node.js to the stack. We used node.js to assemble the normalized data served by CouchDB. We also added nginx with response caching in front of node.js. Additionally, we cached some data directly within the node.js process to speed up requests which were not already cached by nginx.</p>
+
+<p>The request flow was like this:</p>
+
+<ul>
+<li>incoming request</li>
+<li>given a nginx cache miss...</li>
+<li>fetch placement data and priorities for this placement</li>
+<li>process the placement data and preselect ads based on the priority</li>
+<li>fetch the rest of the ad data from CouchDB</li>
+<li>build and send the response back to the client</li>
+</ul>
+
+
+<p>With this in place, we were able to effectively cut the publishing time in half. We also laid out the foundation for upcoming features which required more business logic to serve ads.</p>
+
+<h3>How to measure consistency with CouchDB in a multi-master setup?</h3>
+
+<p>We don't have strong requirements regarding consistency for most of our data. But we still need to make sure that an adserver with its CouchDB replication is not too far behind the others.</p>
+
+<p>To solve this, we wrote a tracer document (containing a timestamp and the hostname) to the local CouchDB in each adserver instance. On the other hand, each adserver asked the ELB (Elastic Load Balancer) from time to time what other adservers were out there. Based on those hostnames, every adserver read the tracer documents of all the other servers and calculated the replication delay.</p>
+
+<p>In case an adserver was too far behind, it removed itself from the ELB to allow the replication to catch up again. If the database became back in sync, the adserver automatically re-added itself to the ELB and started serving requests again.</p>
+
+<h2>New Feature Requests</h2>
+
+<p>We are now in early 2011. This was also about the time when I started to work for adcloud on a regular base as a freelancer.</p>
+
+<p>The problem we were facing is that we know that eventually all requests to the adservers for serving ads are going to be unique and therefor full-response caching is no longer an option. The main reason for the uniqueness of the requests are targeting features, like IP-based location-awareness e.g.</p>
+
+<p>A quick test immediately showed that CouchDB was not able to provide the necessary throughput and latency we need to disable the caching in nginx. We also realized that caching things in node.js is pretty a bad idea &mdash; stop world garbage collection is a no-go for good and stable service quality in terms of latency.</p>
+
+<p><img class="right" src="/images/posts/nosql-fairy-tale/redis-logo.png"></p>
+
+<p>The solution was rather simple from an architectural perspective. We simply replaced our caching backend implemented from objects in node.js to Redis. Some cache objects and structures for lookups were changed to fully utilize native data types Redis provides. The migration was rather simple.</p>
+
+<p>When we start an adserver, we have a cache warmup phase where we pre-fill all placement and ad data into Redis. Once we've finished that we start to accept requests and serve everything out of Redis. But since data is constantly being updated (the Platform publishes data), we needed to keep the data in Redis up to date. We did this with background workers that would handle this while the web worker can continue to serve (stale) data without creating a big impact on the performance.</p>
+
+<p>The results of this step was pretty amazing. We were able to disable the full-response caching entirely while adding new features and maintaining a good and solid service quality and performance. We really love Redis for this!</p>
+
+<h2>Scalability</h2>
+
+<p>We are now in mid- to late-2011, and scalability was the next big topic on our roadmap. This step focussed on our usage of CouchDB, since our scalability was limited by it.</p>
+
+<p>If you take a look at how we used CouchDB and what we did not require at all, you quickly see that there is a mismatch.</p>
+
+<p>We updated <strong>>10k documents/h</strong> (with only about 20k documents total in our database). We had just a single source of updates, the Platform. And we had multi-master replication in a 4-node cluster in place.</p>
+
+<p>On the other hand, we did not require CouchDB's bullet-proof append-only durability, since all the data was essentially transient to the adserver since we constantly got new data. Another thing we did not need was the multi-version concurrency control (MVCC) that CouchDB offers: We only had one source of updates; there was no way that conflicts could happen.</p>
+
+<p>The resulting issue was that we had huge problems with load caused by replication processes. CouchDB's multi-master replication was the one thing hindering us from scaling out. When we added more instances, we got more replication going on, and in the end even more load on each machine &mdash; this is not something you have in mind when scaling out a system.</p>
+
+<p>Compaction was painful too: We accumulated a two-digit gigabyte number of data per server per day due to append-only. For our purpose, we didn't need our database to be rock-solid in terms of durability. And it was getting harder and harder to find a time window in the night when we could run the compaction.</p>
+
+<p>We all realized that this was not CouchDB's fault. We were simply trying to apply the wrong use case to CouchDB. In our case we could not utilize CouchDB's strengths and instead triggered its weak points. Maybe we could have known better in the beginning, but nonetheless opting for CouchDB over S3 back then wasn't a bad idea at all. It helped a lot in terms of evolving the system and the company.</p>
+
+<p>The solution to this situation has a touch of irony. With Redis in place, we replaced CouchDB for placement- and ad-data with S3. Since we weren't using any CouchDB-specific features, we simply published all the documents to S3 buckets instead. We still did the Redis cache warming upfront and data updates in the background. So by decoupling the application from the persistence layer using Redis, we also removed the need for a super fast database backend. We didn't care that S3 is slower than a local CouchDB, since we updated everything asynchronously.</p>
+
+<p>In the end, S3 simply fits our needs. We could remove lots of code like the replication delay check. One additional benefit is that we have fewer moving parts now and less state on our application servers, which is also always a good thing too.</p>
+
+<h2>Once again, more features</h2>
+
+<p>Of course there are always new feature requests on the horizon. We are now in early 2012. Before we can dive into our next challenge, we have to take a quick look at the status quo.</p>
+
+<p>The first S3-based adserver did the entire ad selection on the client side (the user's browser). To a certain degree this was still the case with the CouchDB-node.js solution. One difference is that we did a pre-selection of ads there.</p>
+
+<p>The challenge now is the goal to prepare the system for <a href="http://en.wikipedia.org/wiki/Real-time_bidding">Real-time bidding</a> (RTB). RTB is quite a hot topic in the ad industry. Without going too much into the details what RTB is, let me try to describe it briefly. RTB establishes a auction, where you can bid on a single impression for a given user. For example: When we see a user, we are asking a number of third party services what they are willing to pay for this user/impression. We then need to compare the bids with the revenue we would generate from our own ads and decide whether to serve our ads or the 3rd party ads.<br />
+<em>(Please excuse me if this is not 100% accurate &mdash; I hope you get the idea. I'm a tech person and not that super deep into the business mechanics behind the ad industry.)</em></p>
+
+<p>To enable RTB in our adservers, we need to bring the entire decision logic onto the server-side in order to tell which ads we want to deliver. And we have to do it rather fast. Since we need to query external systems and we have a network roundtrip to our final response to the request, we only have little time processing the bids. We are speaking of ~25ms here to choose from hundreds of possible ads.</p>
+
+<p>The solution to this still excites me quite a bit: Redis. We know and trust Redis' performance. We know it has <a href="http://redis.io/commands#sorted_set">sorted sets</a>. We also have kind of sets of ads to display, and they are sorted by a priority. Why not utilize Redis for this selection logic?</p>
+
+<p>We now heavily use Redis' sorted sets. The score is our ad priority which helps us selecting ads in the end. We build lot's of sets of ads that we can choose from for a given placement. But we also create sets of ads that mutually exclude each other &mdash; you don't want to see a McDonalds ad next to Burger King. For the selection we use mainly <code>ZUNIONSTORE</code> and <code>ZRANGEBYSCORE</code>. We first create a temporary set of ads that we can choose from, where we removed ads that cannot be shown at all. Then we apply our selection logic to determine which ads to pick. Ads with a higher priority (higher member score) are more likely to be shown.</p>
+
+<p>What can I say? Our use case was very easy to model with Redis and it became a deeply integrated part of our business logic. Besides laying the foundation for Real-time bidding, we also improved the performance and quality for our users, by removing code in the client-side JavaScript and by reducing the payload that we need to send to the client. Overall we reduced the size of data that needs to be transfered by over 75%!</p>
+
+<h2>Conclusion</h2>
+
+<p>We now have reached the end of our journey. We have shown you five generations of adcloud's adserver and you might have noticed that we did some radical changes in the architecture. We started out with just S3, moved to CouchDB, then we added Redis, replaced CouchDB with S3 and lately we are using Redis even more...</p>
+
+<p>There are three importent drivers for our design decisions: features, quality &amp; performance and scalability.</p>
+
+<p>If we can deliver a new feature, that give us an advantage over competitors, than this is great. This step ahead of others financed the company very early on and enabled us to continuously grow and improve our systems. Service quality and performance is of course also a very important matter &mdash; only if the quality is good enough you can keep the competitive advantage. And last but not least, scalability. We need to enable our system and architecture to scale as the business grows.</p>
+
+<p>When it comes to NoSQL we had to learn things the hard way sometimes. And one thing is for sure: There is no "one fits all" solution to the problems we are facing. We pick a tool that fits our needs and try to get the best out of it. If we are stuck, cannot scale any further, or we are hindered from implementing new features, we then consider re-evaluating the status quo. Don't be afraid of questioning existing systems.</p>
+
+<p>Adcloud started with a very small team of four developers. Beside the adserver was the Platform which was to be build. Having a very simple solution utilizing S3 was a good decision back then. Going with very small, incremental steps was the only way to go back then. And even now the developer team in Cologne has grown significantly we still try to go by the same principles.</p>
+
+<h2>Slides</h2>
+
+<script async class="speakerdeck-embed" data-id="4fc63943c41f0f002101150c" data-ratio="1.3333333333333333" src="http://adcloud.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
+  
+</feed>
