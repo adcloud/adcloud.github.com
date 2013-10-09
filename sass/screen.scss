@@ -8,3 +8,11 @@
 @import "base";
 @import "partials";
 @import "custom/styles";
+
+a:visited {
+  color: #1863a1
+}
+
+h2 a {
+  text-decoration: none;
+}
