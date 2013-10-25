@@ -20,6 +20,14 @@ We're proud to host the DevHouse Friday Chillout for the last time.
 Feel welcome and enjoy the DevHouse Friday with talks, food and
 Beer.js in our office and on the rooftop.
 
+## ****UPDATE**** Talks
+
+1. Christian of [ROCKETHOME](http://www.rockethome.de) will show  their
+   sensoring hard- and software in action.
+1. [@bluse1995](https://twitter.com/bluse1995) will give an intro to
+   [docker.io](http://www.docker.io/)
+
+
 ### When?
 Friday, 25th Ocober 2013  
 Doors open at 19:00h
